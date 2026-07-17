@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
  
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Dress Store</title>
+    <title>Auth App</title>
    
      <script src="https://accounts.google.com/gsi/client" async defer></script>
 <script src="https://apis.google.com/js/api.js"></script>
@@ -12,6 +12,16 @@
   </head>
   <body >
     <div id="root"></div>
+    <script>
+      // Fallbacks to avoid "React refresh preamble was not loaded" runtime error
+      // This prevents a crash when the refresh runtime isn't injected correctly.
+      if (!window.$RefreshReg$) {
+        window.$RefreshReg$ = function () {};
+      }
+      if (!window.$RefreshSig$) {
+        window.$RefreshSig$ = function () { return function() {}; };
+      }
+    </script>
     <script type="module" src="/src/main.jsx"></script>
 
 
